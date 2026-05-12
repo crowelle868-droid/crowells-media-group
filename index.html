@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crowell's Media Group — Your Local Partner in Local Success</title>
+<meta name="description" content="Crowell's Media Group is a small, local studio helping businesses in Jasper, AL and beyond get found, look professional, and grow online. Websites, content, branding, and growth support — built by real entrepreneurs.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&family=Instrument+Sans:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     CROWELL'S MEDIA GROUP — LANDING PAGE
+     Design System: "Storefront Editorial"
+     ============================================================ */
+
+  :root {
+    --navy: #1a2a4a;
+    --navy-soft: #2a3a5e;
+    --green: #6cba3c;
+    --green-dark: #5aa42f;
+    --cream: #faf7f0;
+    --cream-deep: #f2ede0;
+    --rule: #1a2a4a;
+    --muted: #5a6479;
+    --hairline: rgba(26, 42, 74, 0.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Instrument Sans', system-ui, sans-serif;
+    color: var(--navy);
+    background: var(--cream);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ----------- NAV ----------- */
+  nav.topnav {
+    position: sticky; top: 0;
+    z-index: 50;
+    background: var(--cream);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s, box-shadow 0.25s;
+  }
+  nav.topnav.scrolled {
+    border-bottom-color: var(--hairline);
+    box-shadow: 0 2px 24px rgba(26, 42, 74, 0.04);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; }
+  .nav-logo img { height: 52px; width: auto; }
+  .nav-logo .nm {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--navy);
+    letter-spacing: -0.2px;
+  }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    opacity: 0.78;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; }
+  .nav-cta {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 11px 22px;
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--green); transform: translateY(-1px); }
+
+  /* ----------- HERO ----------- */
+  .hero {
+    padding: 90px 0 110px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 60px; right: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(108, 186, 60, 0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero .kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 28px;
+  }
+  .hero .kicker::before {
+    content: "";
+    width: 8px; height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: clamp(44px, 6.5vw, 88px);
+    line-height: 1.02;
+    letter-spacing: -2px;
+    color: var(--navy);
+    max-width: 14ch;
+    margin-bottom: 32px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+  }
+  .hero h1 .accent {
+    color: var(--green);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .hero .sub {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 56ch;
+    margin-bottom: 44px;
+  }
+  .hero .ctas {
+    display: flex; gap: 14px; flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 30px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    transition: transform 0.2s, background 0.2s, color 0.2s, border-color 0.2s;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  .btn-primary {
+    background: var(--navy);
+    color: var(--cream);
+  }
+  .btn-primary:hover {
+    background: var(--green);
+    transform: translateY(-2px);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--navy);
+    border-color: var(--navy);
+  }
+  .btn-ghost:hover {
+    background: var(--navy);
+    color: var(--cream);
+    transform: translateY(-2px);
+  }
+  .btn .arrow {
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+  .btn:hover .arrow { transform: translateX(3px); }
+
+  .hero .trust {
+    margin-top: 56px;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .hero .trust .dot {
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--muted);
+    opacity: 0.5;
+  }
+  .hero .trust strong { color: var(--navy); font-weight: 700; }
+
+  /* ----------- PAIN POINTS ----------- */
+  .pain {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 88px 0;
+  }
+  .pain .label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 22px;
+  }
+  .pain h2 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: clamp(32px, 4.2vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -1px;
+    max-width: 22ch;
+    margin-bottom: 56px;
+  }
+  .pain h2 em { font-style: italic; font-weight: 400; }
+  .pain h2 .g { color: var(--green); font-style: italic; font-weight: 400; }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(250, 247, 240, 0.2);
+  }
+  .pain-cell {
+    padding: 32px 24px 8px 0;
+    border-right: 1px solid rgba(250, 247, 240, 0.2);
+  }
+  .pain-cell:last-child { border-right: none; }
+  .pain-cell:nth-child(n+2) { padding-left: 24px; }
+  .pain-cell .num {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: var(--green);
+    letter-spacing: -1.5px;
+    margin-bottom: 14px;
+  }
+  .pain-cell p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--cream);
+    opacity: 0.85;
+  }
+
+  /* ----------- SERVICES ----------- */
+  .services {
+    padding: 110px 0;
+    background: var(--cream);
+  }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 56px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .section-head .left { max-width: 40ch; }
+  .section-head .label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 18px;
+  }
+  .section-head h2 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: clamp(32px, 4.2vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: var(--navy);
+  }
+  .section-head h2 em { font-style: italic; font-weight: 400; }
+  .section-head h2 .g { color: var(--green); font-style: italic; font-weight: 400; }
+  .section-head .right {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 38ch;
+    text-align: right;
+    line-height: 1.5;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--hairline);
+    border-left: 1px solid var(--hairline);
+  }
+  .svc {
+    padding: 40px 36px;
+    border-right: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    position: relative;
+    transition: background 0.25s;
+  }
+  .svc:hover { background: var(--cream-deep); }
+  .svc.popular {
+    background: var(--navy);
+    color: var(--cream);
+  }
+  .svc.popular:hover { background: var(--navy-soft); }
+  .svc .num {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
+    opacity: 0.6;
+    margin-bottom: 6px;
+  }
+  .svc h3 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 18px;
+  }
+  .svc .price {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    color: var(--navy);
+    letter-spacing: -1.2px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .svc.popular .price { color: var(--green); }
+  .svc .price-pre {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--muted);
+    margin-right: 6px;
+  }
+  .svc.popular .price-pre { color: var(--cream); opacity: 0.65; }
+  .svc .price-suffix {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--muted);
+    margin-left: 4px;
+  }
+  .svc.popular .price-suffix { color: var(--cream); opacity: 0.65; }
+  .svc .blurb {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 16px 0 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .svc.popular .blurb {
+    color: var(--cream);
+    opacity: 0.8;
+    border-bottom-color: rgba(250, 247, 240, 0.2);
+  }
+  .svc ul {
+    list-style: none;
+    font-size: 14.5px;
+    line-height: 2;
+  }
+  .svc ul li { padding-left: 18px; position: relative; }
+  .svc ul li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 13px;
+    width: 8px; height: 1px;
+    background: var(--green);
+  }
+  .svc .badge {
+    position: absolute;
+    top: 32px; right: 32px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    border: 1.5px solid var(--green);
+    padding: 6px 11px;
+    border-radius: 999px;
+  }
+
+  /* ----------- PROCESS ----------- */
+  .process {
+    padding: 110px 0;
+    background: var(--cream-deep);
+  }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 56px;
+  }
+  .step {
+    background: var(--cream);
+    padding: 38px 32px;
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    position: relative;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(26, 42, 74, 0.08);
+  }
+  .step .stepnum {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 88px;
+    color: var(--green);
+    line-height: 0.9;
+    letter-spacing: -3px;
+    margin-bottom: 24px;
+    opacity: 0.95;
+  }
+  .step h3 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.3px;
+    margin-bottom: 12px;
+  }
+  .step p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  /* ----------- WHY US ----------- */
+  .why {
+    padding: 130px 0;
+    background: var(--navy);
+    color: var(--cream);
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .why .label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 22px;
+  }
+  .why h2 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: clamp(36px, 4.6vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -1.2px;
+    margin-bottom: 28px;
+  }
+  .why h2 em { font-style: italic; font-weight: 400; }
+  .why h2 .g { color: var(--green); font-style: italic; font-weight: 400; }
+  .why .lead {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--cream);
+    opacity: 0.85;
+    max-width: 38ch;
+  }
+  .why-points {
+    list-style: none;
+  }
+  .why-points li {
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(250, 247, 240, 0.18);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .why-points li:last-child { border-bottom: none; }
+  .why-points .pt-num {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--green);
+    letter-spacing: -0.5px;
+    padding-top: 2px;
+  }
+  .why-points h4 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: -0.2px;
+    margin-bottom: 6px;
+  }
+  .why-points p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--cream);
+    opacity: 0.78;
+  }
+
+  /* ----------- PRICING TEASER ----------- */
+  .pricing-teaser {
+    padding: 110px 0;
+    background: var(--cream);
+  }
+  .teaser-card {
+    background: var(--cream-deep);
+    border: 1px solid var(--hairline);
+    padding: 64px 56px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: center;
+    border-radius: 4px;
+  }
+  .teaser-card .left .label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 16px;
+  }
+  .teaser-card h2 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: clamp(28px, 3.6vw, 42px);
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+    margin-bottom: 14px;
+    color: var(--navy);
+  }
+  .teaser-card h2 em { font-style: italic; font-weight: 400; }
+  .teaser-card p {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 50ch;
+  }
+  .teaser-card .right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+  }
+  .teaser-card .starting {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .teaser-card .price-big {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    color: var(--navy);
+    letter-spacing: -2px;
+    line-height: 0.95;
+  }
+  .teaser-card .price-big .g { color: var(--green); }
+
+  /* ----------- TESTIMONIALS ----------- */
+  .testimonials {
+    padding: 110px 0;
+    background: var(--cream-deep);
+  }
+  .tm-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 56px;
+  }
+  .tm {
+    background: var(--cream);
+    padding: 36px 32px;
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+  }
+  .tm .quote-mark {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 56px;
+    color: var(--green);
+    line-height: 0.5;
+    margin-bottom: 18px;
+  }
+  .tm blockquote {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--navy);
+    margin-bottom: 24px;
+  }
+  .tm .author {
+    border-top: 1px solid var(--hairline);
+    padding-top: 18px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .tm .author strong {
+    color: var(--navy);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .tm .author span { color: var(--muted); }
+
+  /* ----------- CONTACT ----------- */
+  .contact {
+    padding: 130px 0;
+    background: var(--cream);
+    position: relative;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .contact .label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 22px;
+  }
+  .contact h2 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: clamp(36px, 4.6vw, 58px);
+    line-height: 1.05;
+    letter-spacing: -1.2px;
+    color: var(--navy);
+    margin-bottom: 24px;
+  }
+  .contact h2 em { font-style: italic; font-weight: 400; }
+  .contact h2 .g { color: var(--green); font-style: italic; font-weight: 400; }
+  .contact .lead {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--muted);
+    margin-bottom: 36px;
+    max-width: 40ch;
+  }
+  .contact .meta { font-size: 14.5px; line-height: 1.8; color: var(--navy); }
+  .contact .meta strong { font-weight: 700; }
+  .contact .meta .lbl {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 4px;
+  }
+  form {
+    background: var(--cream-deep);
+    padding: 44px 40px;
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+  }
+  .field { margin-bottom: 22px; }
+  .field label {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .field input,
+  .field textarea,
+  .field select {
+    width: 100%;
+    background: var(--cream);
+    border: 1px solid var(--hairline);
+    border-radius: 3px;
+    padding: 13px 14px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 15px;
+    color: var(--navy);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .field input:focus,
+  .field textarea:focus,
+  .field select:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(108, 186, 60, 0.15);
+  }
+  .field textarea { min-height: 110px; resize: vertical; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .submit {
+    width: 100%;
+    background: var(--navy);
+    color: var(--cream);
+    border: none;
+    padding: 17px 22px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 6px;
+  }
+  .submit:hover { background: var(--green); transform: translateY(-1px); }
+
+  /* ----------- FOOTER ----------- */
+  footer {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 72px 0 32px;
+  }
+  .foot-top {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(250, 247, 240, 0.18);
+  }
+  .foot-brand img { height: 72px; width: auto; margin-bottom: 18px; filter: brightness(0) invert(1); opacity: 0.95; }
+  .foot-brand .tag {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--cream);
+    opacity: 0.78;
+    max-width: 32ch;
+  }
+  .foot-col h5 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 18px;
+  }
+  .foot-col a, .foot-col p {
+    display: block;
+    font-size: 14px;
+    color: var(--cream);
+    opacity: 0.78;
+    margin-bottom: 10px;
+    line-height: 1.55;
+    transition: opacity 0.2s;
+  }
+  .foot-col a:hover { opacity: 1; }
+  .foot-bottom {
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12.5px;
+    color: var(--cream);
+    opacity: 0.6;
+    letter-spacing: 0.5px;
+  }
+
+  /* ----------- RESPONSIVE ----------- */
+  @media (max-width: 900px) {
+    .wrap { padding: 0 22px; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    .hero { padding: 60px 0 80px; }
+    .pain-grid { grid-template-columns: 1fr 1fr; }
+    .pain-cell { border-right: none; }
+    .pain-cell:nth-child(odd) { border-right: 1px solid rgba(250, 247, 240, 0.2); }
+    .services-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; gap: 40px; }
+    .teaser-card { grid-template-columns: 1fr; padding: 40px 28px; }
+    .teaser-card .right { align-items: flex-start; }
+    .tm-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .section-head { flex-direction: column; align-items: flex-start; }
+    .section-head .right { text-align: left; }
+    .row2 { grid-template-columns: 1fr; }
+    .foot-top { grid-template-columns: 1fr 1fr; }
+    .foot-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav class="topnav" id="topnav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="nav-logo">
+      <img src="logo.png" alt="Crowell's Media Group">
+      <span class="nm">Crowell's Media Group</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#process">How It Works</a>
+      <a href="#why">Why Us</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact" class="nav-cta">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="kicker">Your Local Partner in Local Success</div>
+    <h1>
+      We help local businesses <em>get found</em>, look <em>better</em>, and <span class="accent">grow online.</span>
+    </h1>
+    <p class="sub">
+      Crowell's Media Group is a small, local studio building the digital presence small businesses actually need —
+      websites, content, branding, and growth support — built by entrepreneurs who understand what it takes
+      to run a business, not just decorate one.
+    </p>
+    <div class="ctas">
+      <a href="#contact" class="btn btn-primary">Book a Free Consultation <span class="arrow">→</span></a>
+      <a href="#services" class="btn btn-ghost">See What We Do</a>
+    </div>
+    <div class="trust">
+      <span><strong>Based in Jasper, AL</strong></span>
+      <span class="dot"></span>
+      <span>Serving the Southeast</span>
+      <span class="dot"></span>
+      <span><strong>Built by real entrepreneurs</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PAIN POINTS ===================== -->
+<section class="pain">
+  <div class="wrap">
+    <div class="label">Built for the local business that…</div>
+    <h2>
+      Knows it needs to be online — but doesn't have the time, the team, or the tech background to <span class="g">figure it all out alone.</span>
+    </h2>
+    <div class="pain-grid">
+      <div class="pain-cell">
+        <div class="num">01</div>
+        <p>Doesn't show up on Google when people search for your services.</p>
+      </div>
+      <div class="pain-cell">
+        <div class="num">02</div>
+        <p>Has a website that looks ten years old — or worse, no website at all.</p>
+      </div>
+      <div class="pain-cell">
+        <div class="num">03</div>
+        <p>Hires "the marketing guy" who disappears after the first invoice.</p>
+      </div>
+      <div class="pain-cell">
+        <div class="num">04</div>
+        <p>Knows the work is great — but the online presence doesn't show it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="left">
+        <div class="label">What We Do</div>
+        <h2>Four packages. <em>One studio.</em> <span class="g">Built around you.</span></h2>
+      </div>
+      <div class="right">
+        From your first day online to ongoing growth — we meet your business where it is and build the pieces it actually needs.
+      </div>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="svc">
+        <div class="num">01 · Foundation</div>
+        <h3>Business Launch Package</h3>
+        <div class="price"><span class="price-pre">starting at</span>$497</div>
+        <div class="blurb">For new businesses that need to get online — properly, the first time.</div>
+        <ul>
+          <li>Logo consultation</li>
+          <li>Google Business Profile setup</li>
+          <li>Review link setup</li>
+          <li>Basic branding guidance</li>
+          <li>Social platform setup</li>
+          <li>30-minute strategy session</li>
+        </ul>
+      </div>
+
+      <div class="svc popular">
+        <div class="badge">Most Popular</div>
+        <div class="num">02 · Established</div>
+        <h3>Digital Presence Package</h3>
+        <div class="price"><span class="price-pre">starting at</span>$1,497</div>
+        <div class="blurb">For businesses ready to look professional and generate real leads online.</div>
+        <ul>
+          <li>Everything in Launch Package</li>
+          <li>3–5 page website</li>
+          <li>Mobile optimization</li>
+          <li>Contact forms</li>
+          <li>Basic local SEO</li>
+          <li>Domain &amp; hosting setup</li>
+        </ul>
+      </div>
+
+      <div class="svc">
+        <div class="num">03 · On-Site</div>
+        <h3>Content Creator Package</h3>
+        <div class="price"><span class="price-pre">starting at</span>$497<span class="price-suffix">/ shoot</span></div>
+        <div class="blurb">For businesses that need real photos and video of their actual work, team, and space.</div>
+        <ul>
+          <li>On-site photo capture</li>
+          <li>Short-form video content</li>
+          <li>Social media reels</li>
+          <li>Team &amp; staff content</li>
+          <li>Edited deliverables</li>
+          <li>Built for contractors, restaurants, retail</li>
+        </ul>
+      </div>
+
+      <div class="svc">
+        <div class="num">04 · Ongoing</div>
+        <h3>Business Growth Partner</h3>
+        <div class="price"><span class="price-pre">starting at</span>$997<span class="price-suffix">/ month</span></div>
+        <div class="blurb">For businesses ready to grow with a real partner — not a freelancer who disappears.</div>
+        <ul>
+          <li>Monthly content creation</li>
+          <li>Website updates</li>
+          <li>Google Profile updates</li>
+          <li>Ad creative</li>
+          <li>Social strategy</li>
+          <li>Performance reporting</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="left">
+        <div class="label">How It Works</div>
+        <h2>Three simple steps. <span class="g">No mystery, no fluff.</span></h2>
+      </div>
+      <div class="right">
+        We keep it straight — a real conversation, a real plan, and real work that ships when we say it will.
+      </div>
+    </div>
+
+    <div class="process-grid">
+      <div class="step">
+        <div class="stepnum">01</div>
+        <h3>Free Consultation</h3>
+        <p>We sit down (in person or on a call), look at where your business is online, and tell you exactly what we'd do — even if you never hire us.</p>
+      </div>
+      <div class="step">
+        <div class="stepnum">02</div>
+        <h3>Custom Plan &amp; Quote</h3>
+        <p>You get a clear, written plan with flat-rate pricing. No vague retainers, no surprise invoices, no jargon you can't act on.</p>
+      </div>
+      <div class="step">
+        <div class="stepnum">03</div>
+        <h3>Build, Launch, Grow</h3>
+        <p>We build it, launch it, and stick around to help it actually work — content, updates, reporting, the whole partnership.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY US ===================== -->
+<section class="why" id="why">
+  <div class="wrap why-grid">
+    <div>
+      <div class="label">Why Crowell's Media Group</div>
+      <h2>Built by real entrepreneurs. <span class="g">Not just web designers.</span></h2>
+      <p class="lead">
+        We started Crowell's Media Group because we saw too many local businesses get burned —
+        by agencies that don't return calls, by freelancers who vanish, by templates that look like everyone else.
+        We built the studio we wished existed in Walker County.
+      </p>
+    </div>
+    <ul class="why-points">
+      <li>
+        <div class="pt-num">→</div>
+        <div>
+          <h4>We answer the phone.</h4>
+          <p>You'll deal with the people who built your site — not an account manager three states away.</p>
+        </div>
+      </li>
+      <li>
+        <div class="pt-num">→</div>
+        <div>
+          <h4>We show up on site.</h4>
+          <p>Real photos. Real videos. Real conversations with your team. Not stock images and templates.</p>
+        </div>
+      </li>
+      <li>
+        <div class="pt-num">→</div>
+        <div>
+          <h4>We charge flat rates.</h4>
+          <p>You know exactly what you're paying for before we start — and exactly what you're getting.</p>
+        </div>
+      </li>
+      <li>
+        <div class="pt-num">→</div>
+        <div>
+          <h4>We treat your business like ours.</h4>
+          <p>Because we run one too. We know what it feels like to hire help that doesn't help.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== PRICING TEASER ===================== -->
+<section class="pricing-teaser" id="pricing">
+  <div class="wrap">
+    <div class="teaser-card">
+      <div class="left">
+        <div class="label">Featured Audit</div>
+        <h2>Already online, <em>but not getting results?</em></h2>
+        <p>
+          Our Digital Health Check is a one-time diagnostic — website audit, mobile speed test, SEO visibility review,
+          competitor analysis, branding review, and conversion recommendations. A diagnostic, not a sales pitch.
+        </p>
+      </div>
+      <div class="right">
+        <div class="starting">starting at</div>
+        <div class="price-big">$<span class="g">147</span></div>
+        <a href="#contact" class="btn btn-primary" style="margin-top: 12px;">Book Your Audit <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="left">
+        <div class="label">What Local Owners Say</div>
+        <h2>Real businesses. <em>Real results.</em> <span class="g">Real relationships.</span></h2>
+      </div>
+      <div class="right">
+        Testimonials from real Crowell's clients — coming soon as we wrap our first launches of 2026.
+      </div>
+    </div>
+
+    <div class="tm-grid">
+      <div class="tm">
+        <div class="quote-mark">"</div>
+        <blockquote>
+          They answered every call, showed up on site twice in the first week, and built us the site we'd been promised for two years by another agency.
+        </blockquote>
+        <div class="author">
+          <strong>Client Name</strong>
+          <span>Business Type, Jasper AL</span>
+        </div>
+      </div>
+      <div class="tm">
+        <div class="quote-mark">"</div>
+        <blockquote>
+          We finally show up on Google when people search for what we do. The photos they took look like a magazine spread — and they're ours.
+        </blockquote>
+        <div class="author">
+          <strong>Client Name</strong>
+          <span>Business Type, Walker County</span>
+        </div>
+      </div>
+      <div class="tm">
+        <div class="quote-mark">"</div>
+        <blockquote>
+          Honest pricing, honest work, honest people. The kind of local business you want to keep working with — because they get it.
+        </blockquote>
+        <div class="author">
+          <strong>Client Name</strong>
+          <span>Business Type, Alabama</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="label">Let's Talk</div>
+      <h2>Tell us about your <em>business.</em> <span class="g">We'll handle the rest.</span></h2>
+      <p class="lead">
+        Free consultation. No obligation. We'll give you a real assessment of what your business needs online —
+        and tell you exactly what we'd do if it were ours.
+      </p>
+      <div class="meta">
+        <span class="lbl">Office</span>
+        804 Hwy 78 W<br>
+        Jasper, AL 35501
+
+        <span class="lbl">Email</span>
+        <a href="mailto:crowelle868@gmail.com">crowelle868@gmail.com</a>
+
+        <span class="lbl">Hours</span>
+        Mon–Fri · 8am–6pm CT<br>
+        Weekends by appointment
+      </div>
+    </div>
+
+    <form action="https://formsubmit.co/crowelle868@gmail.com" method="POST">
+      <!-- Formsubmit configuration -->
+      <input type="hidden" name="_subject" value="New Lead — Crowell's Media Group">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://crowells-media-group.vercel.app/?submitted=true">
+      <input type="text" name="_honey" style="display:none">
+
+      <div class="row2">
+        <div class="field">
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="field">
+          <label>Business</label>
+          <input type="text" name="business" placeholder="Business name">
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="you@business.com" required>
+        </div>
+        <div class="field">
+          <label>Phone</label>
+          <input type="tel" name="phone" placeholder="(205) 555-0100">
+        </div>
+      </div>
+      <div class="field">
+        <label>What do you need?</label>
+        <select name="need">
+          <option>Not sure yet — let's talk</option>
+          <option>Business Launch Package ($497)</option>
+          <option>Digital Presence Package ($1,497)</option>
+          <option>Content Creator Package ($497/shoot)</option>
+          <option>Business Growth Partner ($997/mo)</option>
+          <option>Digital Health Check ($147)</option>
+          <option>À la carte service</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Tell us more</label>
+        <textarea name="message" placeholder="A sentence or two about your business and what you're hoping to do."></textarea>
+      </div>
+      <button type="submit" class="submit">Book My Free Consultation →</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="logo.png" alt="Crowell's Media Group">
+        <p class="tag">A small, local studio building the digital presence small businesses actually need. Jasper, AL.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <a href="#services">Business Launch</a>
+        <a href="#services">Digital Presence</a>
+        <a href="#services">Content Creator</a>
+        <a href="#services">Growth Partner</a>
+      </div>
+      <div class="foot-col">
+        <h5>Studio</h5>
+        <a href="#why">Why Us</a>
+        <a href="#process">How It Works</a>
+        <a href="#pricing">Pricing Guide</a>
+        <a href="#contact">Book a Call</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <p>804 Hwy 78 W<br>Jasper, AL 35501</p>
+        <a href="mailto:crowelle868@gmail.com">crowelle868@gmail.com</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Crowell's Media Group. Your local partner in local success.</div>
+      <div>Built in Jasper, AL.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Add shadow to nav on scroll
+  const nav = document.getElementById('topnav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 12) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+</script>
+
+</body>
+</html>

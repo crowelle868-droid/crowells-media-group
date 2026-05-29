@@ -1141,12 +1141,11 @@
       </div>
     </div>
 
-    <form action="https://formsubmit.co/crowelle868@gmail.com" method="POST">
+    <form id="contact-form" action="https://formsubmit.co/crowelle868@gmail.com" method="POST">
       <!-- Formsubmit configuration -->
       <input type="hidden" name="_subject" value="New Lead — Crowell's Media Group">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://crowells-media-group.vercel.app/?submitted=true">
       <input type="text" name="_honey" style="display:none">
 
       <div class="row2">
@@ -1226,12 +1225,44 @@
 </footer>
 
 <script>
-  // Add shadow to nav on scroll
+  // Nav scroll shadow
   const nav = document.getElementById('topnav');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 12) nav.classList.add('scrolled');
     else nav.classList.remove('scrolled');
   });
+
+  // Handle contact form with fetch (no redirect / no 404)
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = contactForm.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      try {
+        const data = new FormData(contactForm);
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          contactForm.innerHTML = '<p style="font-size:1.2rem;font-weight:700;color:#6cba3c;padding:2rem 0;">✓ Message received! We\'ll be in touch within one business day.</p>';
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Book My Free Consultation →';
+          alert('Something went wrong — please try again or email crowelle868@gmail.com directly.');
+        }
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = 'Book My Free Consultation →';
+        alert('Network error — please check your connection and try again.');
+      }
+    });
+  }
 </script>
 
 </body>
